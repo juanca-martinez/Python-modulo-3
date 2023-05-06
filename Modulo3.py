@@ -1,8 +1,9 @@
-def imprimeLista(mostrar, Titulo):
+def imprimir_nombres(mostrar, Titulo):
     print("-----" + Titulo + "-------\n")
     for item in mostrar:
         print(item)
-    print('\n----FIN LISTADO----\n')
+    print("\n----FIN LISTADO----\n\n")
+
 
 Listado = [
     "Harry Houdini",
@@ -17,23 +18,21 @@ Listado = [
 ]
 
 
+def hacer_grandioso(Listado):
+    for valor in Listado:
+        if valor == "Harry Houdini" or valor == "David Blaine" or valor == "Teller":
+            magos.append("El Gran " + valor)
+            otros.remove(valor)
+        elif valor == "Newton" or valor == "Hawking" or valor == "Einstein":
+            cientificos.append(valor)
+            otros.remove(valor)
+
+
 magos = []
 cientificos = []
 otros = list(Listado)
-
-for indice, valor in enumerate(Listado):
-    print(indice, valor)
-    if valor == "Harry Houdini" or valor == "David Blaine" or valor == "Teller":
-        #print(valor + " es el mejor mago de todos los tiempos")
-        magos.append("El Gran " + valor)
-        otros.remove(valor)
-    elif valor == "Newton" or valor == "Hawking" or valor == "Einstein":
-        #print(valor + " es el mejor cientifico de todos los tiempos")
-        cientificos.append(valor)
-        otros.remove(valor)
-
-
-imprimeLista(magos, "Listado de Magos")
-imprimeLista(cientificos, "Listado de Cientificos")
-imprimeLista(otros, "Listado de Otros")
-
+hacer_grandioso(Listado)
+imprimir_nombres(Listado, "Listado Inicial")
+imprimir_nombres(magos, "Listado de Magos")
+imprimir_nombres(cientificos, "Listado de Científicos")
+imprimir_nombres(otros, "Listado de Otros")
