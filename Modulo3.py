@@ -1,3 +1,9 @@
+def imprimeLista(mostrar, Titulo):
+    print("-----" + Titulo + "-------\n")
+    for item in mostrar:
+        print(item)
+    print('\n----FIN LISTADO----\n')
+
 Listado = [
     "Harry Houdini",
     "Newton",
@@ -9,15 +15,25 @@ Listado = [
     "Pele",
     "Juanes",
 ]
+
+
 magos = []
 cientificos = []
-Otros = []
+otros = list(Listado)
 
-for lista in Listado:
-    print(lista)
-    if lista == 'Harry Houdini' or lista == "David Blaine" or lista == "Teller":
-        print(lista + " es el mejor mago de todos los tiempos")
-    elif lista == 'Newton' or lista == "Hawking" or lista == "Einstein":
-        print(lista + " es el mejor cientifico de todos los tiempos")
-    else:
-        print(lista + " es el mejor deportista de todos los tiempos")
+for indice, valor in enumerate(Listado):
+    print(indice, valor)
+    if valor == "Harry Houdini" or valor == "David Blaine" or valor == "Teller":
+        #print(valor + " es el mejor mago de todos los tiempos")
+        magos.append("El Gran " + valor)
+        otros.remove(valor)
+    elif valor == "Newton" or valor == "Hawking" or valor == "Einstein":
+        #print(valor + " es el mejor cientifico de todos los tiempos")
+        cientificos.append(valor)
+        otros.remove(valor)
+
+
+imprimeLista(magos, "Listado de Magos")
+imprimeLista(cientificos, "Listado de Cientificos")
+imprimeLista(otros, "Listado de Otros")
+
